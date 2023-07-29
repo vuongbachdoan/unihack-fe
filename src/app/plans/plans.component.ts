@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-plans',
@@ -10,10 +11,7 @@ export class PlansComponent {
   dataListFetch;
   isFetch: boolean = true;
 
-  constructor (db: AngularFireDatabase) {
-
+  constructor(db: AngularFireDatabase) {
     this.dataListFetch = db.list('DeviceList').valueChanges()
-
   }
-
 }

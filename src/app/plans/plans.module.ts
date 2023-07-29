@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { PlansComponent } from './plans.component';
 
 
-
 @NgModule({
   declarations: [PlansComponent],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [PlansModule]
 })
