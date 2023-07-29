@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
-import { Observable } from 'rxjs';
+import { Observable, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-plans',
@@ -8,10 +8,28 @@ import { Observable } from 'rxjs';
   styleUrls: ['./plans.component.scss'],
 })
 export class PlansComponent {
-  dataListFetch;
+  dataListFetch: any;
   isFetch: boolean = true;
 
-  constructor(db: AngularFireDatabase) {
-    this.dataListFetch = db.list('DeviceList').valueChanges()
+  constructor(private db: AngularFireDatabase) {
+  }
+
+  
+  observable$!: Observable<any>;
+  unsubscribe$: Subject<void> = new Subject<void>();
+  ngOnInit() {
+    this.observable$ = this.db.list('DeviceList').valueChanges()
+    this.observable$
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(value => {
+        this.dataListFetch = value
+        console.log(this.dataListFetch)
+      });
+
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 }
