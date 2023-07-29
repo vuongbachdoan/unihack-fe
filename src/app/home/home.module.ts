@@ -4,10 +4,11 @@ import { HomeComponent } from './home.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from '../dashboard/dashboard.component';
-import { UsageComponent } from '../usage/usage.component';
+import { CostComponent } from '../cost/cost.component';
+import { DevicesComponent } from '../devices/devices.component';
 
 @NgModule({
-  declarations: [HomeComponent, DashboardComponent, UsageComponent],
+  declarations: [HomeComponent, DashboardComponent, DevicesComponent, CostComponent],
   imports: [
     CommonModule,
     NgApexchartsModule,

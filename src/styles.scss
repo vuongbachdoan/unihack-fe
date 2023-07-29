@@ -18,3 +18,12 @@
 .m-0-auto {
     margin: 0px auto;
 }
+
+.scrollable-y-container {
+    overflow-y: scroll;
+    height: auto;
+}
+
+.scrollable-hidden::-webkit-scrollbar {
+    display: none;
+  }

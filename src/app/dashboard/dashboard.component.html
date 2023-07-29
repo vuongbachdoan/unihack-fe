@@ -1,23 +1,7 @@
-<div class="row my-3">
-    <div class="col-md-12 pt-4">
-      <h2>Energy Dashboard</h2>
-    </div>
-<!--
-    <apx-chart
-      [series]="series"
-      [chart]="chart"
-      [dataLabels]="dataLabels"
-      [markers]="markers"
-      [title]="title"
-      [fill]="fill"
-      [stroke]="stroke"
-      [yaxis]="yaxis"
-      [xaxis]="xaxis"
-      [tooltip]="tooltip"
-      [autoUpdateSeries]="true"
-    >
-    </apx-chart> -->
-
+<div class="my-3">
+  <div class="pt-4">
+    <h2>Energy Dashboard</h2>
+  </div>
     <apx-chart *ngFor="let device of listDevice; let i = index"
       [series]="device.series"
       [chart]="device.chart"
@@ -31,6 +15,5 @@
       [tooltip]="device.tooltip"
       [autoUpdateSeries]="true"
     >
-    {{ device }}
     </apx-chart>
 </div>

@@ -72,7 +72,7 @@ export class DashboardComponent {
 
         zoom: {
           type: 'x',
-          enabled: true,
+          enabled: false,
           autoScaleYaxis: false,
         },
       },
