@@ -16,6 +16,10 @@ import * as Charts from 'fusioncharts/fusioncharts.charts';
 // Load themes
 import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 import { CostComponent } from './cost/cost.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { PlansComponent } from './plans/plans.component';
 
 // Add dependencies to FusionChartsModule
 FusionChartsModule.fcRoot(
@@ -34,7 +38,9 @@ FusionChartsModule.fcRoot(
     NgbModule,
     HomeModule,
     StoreModule.forRoot({navigator: navigatorReducer}, {}),
-    FusionChartsModule
+    FusionChartsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideDatabase(() => getDatabase())
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,10 +14,15 @@ import {
 
 import * as mock from '../mock/tenDayRecorded';
 import { MountainChart } from '../shared/models/chart.model';
+import { StateObservable } from '@ngrx/store';
 
 const dataSeries = mock.tenDayRecorded;
 
 const dataMock = mock.oneDayRecordedMock;
+interface Item {
+  name: string,
+  ...
+};
 
 @Component({
   selector: 'app-dashboard',
@@ -37,9 +42,12 @@ export class DashboardComponent {
   // xaxis!: ApexXAxis;
   // tooltip!: ApexTooltip;
   // stroke!: ApexStroke;
+  item$: StateObservable<Item[]>;
+  firestore: Firestore = inject(Firestore);
 
   constructor() {
     this.renderListDevice();
+    
   }
 
   public async renderListDevice() {

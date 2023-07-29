@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsageComponent } from './usage/usage.component';
 import { DevicesComponent } from './devices/devices.component';
 import { CostComponent } from './cost/cost.component';
+import { PlansComponent } from './plans/plans.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: 'devices',
         component: DevicesComponent
+      },
+      {
+        path: 'plans',
+        component: PlansComponent
       }
     ]
   },
