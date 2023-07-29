@@ -14,7 +14,8 @@ import {
 
 import * as mock from '../mock/tenDayRecorded';
 import { MountainChart } from '../shared/models/chart.model';
-import { StateObservable } from '@ngrx/store';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+
 const dataMock = mock.oneDayRecordedMock;
 
 @Component({
@@ -35,10 +36,12 @@ export class DashboardComponent {
   // xaxis!: ApexXAxis;
   // tooltip!: ApexTooltip;
   // stroke!: ApexStroke;
+  items;
 
-  constructor() {
+  constructor(db: AngularFireDatabase) {
     this.renderListDevice();
-    
+    this.items = db.list('monthly_reports').valueChanges();
+    console.log(this.items)
   }
 
   public async renderListDevice() {

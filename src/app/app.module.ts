@@ -20,6 +20,8 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { PlansComponent } from './plans/plans.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 // Add dependencies to FusionChartsModule
 FusionChartsModule.fcRoot(
@@ -39,8 +41,8 @@ FusionChartsModule.fcRoot(
     HomeModule,
     StoreModule.forRoot({navigator: navigatorReducer}, {}),
     FusionChartsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideDatabase(() => getDatabase())
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
