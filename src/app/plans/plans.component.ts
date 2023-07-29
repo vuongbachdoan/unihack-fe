@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import * as mock from '../mock/tenDayRecorded';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import { Observable, Subject, takeUntil } from 'rxjs';
+import { generateSuggestion } from '../utils/utils';
 
 @Component({
   selector: 'app-plans',
@@ -12,6 +13,7 @@ export class PlansComponent {
   dataListFetch;
   result:any[] = [];
   isFetch: boolean = true;
+  
 
   constructor(private db: AngularFireDatabase) {
     this.dataListFetch = mock.oneDayRecordedMock;
@@ -31,16 +33,14 @@ export class PlansComponent {
         name:value.nameDevice,
         id: value.id,
         result: result1,
-        message: result1 > (maxW - 100) ?  'The electricity you are consuming can be large, do you want to be optimal?':'Everything is OK!'
+        message: result1 > (maxW - 100) ?  'The electricity you are consuming can be large, do you want to be optimal?':'Everything is OK!',
+        duration: generateSuggestion(value.history)
       }
 
       result.push(temp)
     });
 
     this.result = result
-
-
-
   }
   observable$!: Observable<any>;
   unsubscribe$: Subject<void> = new Subject<void>();

@@ -1720,31 +1720,31 @@ export const oneDayRecordedMock = [
       },
       {
         dateTime: '2023-07-29 08:30',
-        value: '0',
+        value: '221',
       },
       {
         dateTime: '2023-07-29 09:00',
-        value: '0',
+        value: '120',
       },
       {
         dateTime: '2023-07-29 09:30',
-        value: '0',
+        value: '311',
       },
       {
         dateTime: '2023-07-29 10:00',
-        value: '0',
+        value: '511',
       },
       {
         dateTime: '2023-07-29 10:30',
-        value: '0',
+        value: '751',
       },
       {
         dateTime: '2023-07-29 11:00',
-        value: '0',
+        value: '104',
       },
       {
         dateTime: '2023-07-29 11:30',
-        value: '0',
+        value: '172000',
       },
       {
         dateTime: '2023-07-29 12:00',

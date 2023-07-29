@@ -1,20 +1,36 @@
-<div class="container m-3">
-  <div class="row">
-    <div *ngFor="let item of result" class="col col-3">
-      <div class="basic-card basic-card-dark">
-        <div class="card-content">
-          <span *ngIf="item.result > 2000" class="card-title">{{ item.name }} - Alert</span>
-          <span *ngIf="item.result <= 2000" class="card-title">{{ item.name }} - Status</span>
-          <p class="card-text">
-            {{ item.message }}
-            ({{ item.result }}kwh/2000kwh)
-          </p>
+<div class="container">
+  <h3 class="text-white mt-3">Hello, Admin!</h3>
+  <p class="text-white">Save energy with our product</p>
+</div>
+
+<div class="row">
+  <div class="row p-0 m-0-auto">
+    <div *ngFor="let item of result" class="col-md-4">
+      <div class="morphi card text-center h-100">
+        <div class="card-header text-white">Device</div>
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <h5 class="card-title title-highlight">Set time to Laptop</h5>
+            <p class="card-text text-light fs-6 fw-light">
+              {{ item.message }}.
+            </p>
+          </div>
+
+          <div>
+            <p class="card-text text-light fs-6 mb-3 fw-light">
+              ({{ item.result }}kwh/2000kwh)
+            </p>
+            <button
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+              class="btn btn-primary"
+            >
+              Accept optimization
+            </button>
+          </div>
         </div>
-        <div class="card-link" *ngIf="item.result > 2000">
-          <a href="#" title="Read Full"><span>Action</span></a>
-        </div>
+        <div class="card-footer text-white fs-bold">{{item.duration.startAt}} - {{item.duration.endAt}}</div>
       </div>
     </div>
-
   </div>
 </div>
