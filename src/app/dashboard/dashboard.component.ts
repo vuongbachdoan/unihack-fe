@@ -41,7 +41,6 @@ export class DashboardComponent {
   constructor(db: AngularFireDatabase) {
     this.renderListDevice();
     this.items = db.list('monthly_reports').valueChanges();
-    console.log(this.items)
   }
 
   public async renderListDevice() {

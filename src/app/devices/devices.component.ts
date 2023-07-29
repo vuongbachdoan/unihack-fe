@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 
 @Component({
@@ -8,9 +9,22 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 })
 export class DevicesComponent {
   isOff: boolean = true;
+  countingTime!: string;
 
   toggleState() {
     this.isOff = !this.isOff;
   }
 
+  dateTime!: any
+  report;
+  constructor(db: AngularFireDatabase) {
+    this.report = db.object('monthly_reports/1');
+  }
+
+  addReport() {
+    this.report.update({ offTime: this.dateTime })
+    .then(() => {
+      console.log("Update successfully")
+    });
+  }
 }
