@@ -10,7 +10,7 @@
         <div class="card-header text-white">Device</div>
         <div class="card-body d-flex flex-column justify-content-between">
           <div>
-            <h5 class="card-title title-highlight">Set time to Laptop</h5>
+            <h5 class="card-title title-highlight">Optimize for {{ item.name }}</h5>
             <p class="card-text text-light fs-6 fw-light">
               {{ item.message }}.
             </p>
@@ -28,7 +28,7 @@
             </button>
           </div>
         </div>
-        <div class="card-footer text-white fs-bold">{{item.duration.startAt}} - {{item.duration.endAt}}</div>
+        <div class="card-footer text-white fs-bold">Base on our statistics, We suggest the time from <b>{{item.duration.startAt}}</b> to <b>{{item.duration.endAt}}</b> everyday to turn off the device and save your energy</div>
       </div>
     </div>
   </div>
