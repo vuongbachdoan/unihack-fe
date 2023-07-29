@@ -1,5 +1,6 @@
 import { style } from '@angular/animations';
 import { Component, ViewChild } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import {
   ApexAxisChartSeries,
   ApexChart,
@@ -31,15 +32,18 @@ export class CostComponent {
   stroke!: ApexStroke;
   legend!: ApexLegend;
 
-  constructor() {
-    this.initChartData();
+  constructor(db: AngularFireDatabase) {
+      db.list('monthly_reports').valueChanges().subscribe((data) => {
+
+        this.initChartData(data);
+      })
   }
 
-  initChartData(){
+  initChartData(data: any){
     this.series = [
       {
         name: "Total billing",
-        data: [350000, 410000, 360000, 260000, 450000, 480000, 520000, 530000, 410000],
+        data: data,
         color: '#D1F248',
       },   
     ]
@@ -51,7 +55,7 @@ export class CostComponent {
     this.plotOptions = {
       bar: {
         horizontal: false,
-        columnWidth: "55%",
+        columnWidth: "30%",
       }
     },
     this.dataLabels = {
