@@ -36,28 +36,55 @@ export class DashboardComponent {
   // xaxis!: ApexXAxis;
   // tooltip!: ApexTooltip;
   // stroke!: ApexStroke;
-  items;
+  device1:any;
+  device2:any;
 
   constructor(db: AngularFireDatabase) {
-    this.renderListDevice();
-    this.items = db.list('monthly_reports').valueChanges();
+    db.object('Device1').valueChanges().subscribe((value: any) => {
+      this.device1 = value;
+    });
+    db.object('Device2').valueChanges().subscribe((value: any) => {
+      this.device2 = value;
+    });
+    setTimeout(() => {
+      this.renderListDevice();
+    }, 3000);
+
   }
 
   public async renderListDevice() {
-    for await (const device of dataMock) {
-      this.initChartData(device);
-    }
+    this.initChartData({
+      nameDevice: "Device 1",
+      history: this.device1
+    });
+    // this.initChartData(this.fetchDB2);
   }
 
   public initChartData(device: any): void {
-    let historyData = device.history;
+    let tempHistory = device.history;
+
+    console.log(device.history, 'camnx');
+
+    var historyData = Object.keys(tempHistory.History)
+    .map(function(key) {
+
+      let d = new Date(key)
+        return {
+          dateTime: d.getFullYear() + "-" + ('0' + (d.getMonth()+1)).slice(-2) + "-" + ('0' + d.getDate()).slice(-2)  +  " " + ('0' + d.getHours()).slice(-2) + ":" + ('0' + d.getMinutes()).slice(-2),
+          value:  tempHistory.History[key].Value
+        }
+    });
+
 
     let dates = [];
     for (let i = 0; i < historyData.length; i++) {
-      let time = String(historyData[i].dateTime);
+      let t = new Date()
+      t.setDate(new Date().getDate() - 1)
+      if (new Date(historyData[i].dateTime).getTime() < t.getTime()) {
+        continue
+      }
       dates.push([historyData[i].dateTime, historyData[i].value]);
     }
-
     let oneItem: MountainChart = {
       series: [
         {

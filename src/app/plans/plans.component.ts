@@ -45,7 +45,6 @@ export class PlansComponent {
   observable$!: Observable<any>;
   unsubscribe$: Subject<void> = new Subject<void>();
 
-
   ngOnInit() {
     this.observable$ = this.db.list('DeviceList').valueChanges()
     this.observable$
