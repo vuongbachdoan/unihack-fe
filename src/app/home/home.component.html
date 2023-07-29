@@ -45,6 +45,7 @@
               *ngFor="let item of navigators"
               [id]="item.name"
             >
+              <img [src]="item.svgPath" />
               <a [href]="item.path">
                 {{ item.name }}
               </a>

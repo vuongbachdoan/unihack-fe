@@ -64,12 +64,13 @@ body {
 
 .left-options li a {
     display: block;
-    padding: 10px 0 10px 40px;
+    padding: 13px 0 1px 40px;
     color: #8C8BA6;
     font-size: 15px;
     text-decoration: none;
     margin-bottom: 20px;
     font-family: Nunito Sans Light;
+    line-height: 16px;
 }
 
 .left-options li:before {
@@ -83,34 +84,16 @@ body {
     opacity: 0.6;
 }
 
-.left-options li#Dashboard:before {
-    background-image: url('../../assets/icons/dashboard.svg');
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
+.left-options li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0px 20px 0px
 }
 
-.left-options li#Cost:before {
-    background-image: url('../../assets/icons/cost.svg');
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-}
-
-.left-options li#Devices:before {
-    background-image: url('../../assets/icons/appliances.svg');
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-}
-
-.left-options li#Usage-by-rooms:before {
-    background-image: url('../../assets/icons/usage.svg');
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-}
-
-.left-options li#Emissions:before {
-    background-image: url('../../assets/icons/emissions.svg');
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
+.left-options img {
+  height: 30px;
+  width: 30px;
 }
 
 .left-options li:hover>a {
