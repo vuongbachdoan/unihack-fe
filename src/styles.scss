@@ -2,3 +2,19 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+.btn-cursor {
+    cursor: pointer;
+}
+
+.d-block {
+    display: block;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.m-0-auto {
+    margin: 0px auto;
+}
