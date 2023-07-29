@@ -17,15 +17,17 @@ export class DevicesComponent {
 
   dateTime!: any
   report;
+  status;
   constructor(db: AngularFireDatabase) {
     this.report = db.object('monthly_reports/1');
+    this.status = db.object('Device1');
   }
 
   addReport() {
     const date = new Date(this.dateTime);
     const formattedDate = `${date.getMinutes()}:${date.getHours()} - ${date.getDate()}:${date.getMonth() + 1}:${date.getFullYear()}`;
 
-    this.report.update({ offTime: formattedDate })
+    this.status.update({ offTime: formattedDate })
       .then(() => {
         console.log("Update successfully")
         this.dateTime = formattedDate
