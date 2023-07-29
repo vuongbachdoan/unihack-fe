@@ -1652,63 +1652,63 @@ export const oneDayRecordedMock = [
     history: [
       {
         dateTime: '2023-07-29 00:00',
-        value: '183',
+        value: '103',
       },
       {
         dateTime: '2023-07-29 00:30',
-        value: '182',
+        value: '102',
       },
       {
         dateTime: '2023-07-29 01:00',
-        value: '182',
+        value: '102',
       },
       {
         dateTime: '2023-07-29 01:30',
-        value: '180',
+        value: '100',
       },
       {
         dateTime: '2023-07-29 02:00',
-        value: '183',
+        value: '103',
       },
       {
         dateTime: '2023-07-29 02:30',
-        value: '184',
+        value: '104',
       },
       {
         dateTime: '2023-07-29 03:00',
-        value: '185',
+        value: '105',
       },
       {
         dateTime: '2023-07-29 03:30',
-        value: '185',
+        value: '105',
       },
       {
         dateTime: '2023-07-29 04:00',
-        value: '186',
+        value: '106',
       },
       {
         dateTime: '2023-07-29 04:30',
-        value: '186',
+        value: '106',
       },
       {
         dateTime: '2023-07-29 05:00',
-        value: '180',
+        value: '100',
       },
       {
         dateTime: '2023-07-29 05:30',
-        value: '180',
+        value: '100',
       },
       {
         dateTime: '2023-07-29 06:00',
-        value: '180',
+        value: '106',
       },
       {
         dateTime: '2023-07-29 06:30',
-        value: '180',
+        value: '110',
       },
       {
         dateTime: '2023-07-29 07:00',
-        value: '0',
+        value: '100',
       },
       {
         dateTime: '2023-07-29 07:30',
@@ -1808,39 +1808,39 @@ export const oneDayRecordedMock = [
       },
       {
         dateTime: '2023-07-29 19:30',
-        value: '0',
+        value: '100',
       },
       {
         dateTime: '2023-07-29 20:00',
-        value: '185',
+        value: '100',
       },
       {
         dateTime: '2023-07-29 20:30',
-        value: '185',
+        value: '105',
       },
       {
         dateTime: '2023-07-29 21:00',
-        value: '185',
+        value: '105',
       },
       {
         dateTime: '2023-07-29 21:30',
-        value: '185',
+        value: '105',
       },
       {
         dateTime: '2023-07-29 22:00',
-        value: '185',
+        value: '105',
       },
       {
         dateTime: '2023-07-29 22:30',
-        value: '185',
+        value: '105',
       },
       {
         dateTime: '2023-07-29 23:00',
-        value: '185',
+        value: '105',
       },
       {
         dateTime: '2023-07-29 23:30',
-        value: '185',
+        value: '105',
       },
     ],
   },
