@@ -1,14 +1,14 @@
 <div>
   <div class="container-fluid">
     <div class="row flex-xl-nowrap">
-      <div id="nav" class="col-12 col-md-3 col-xl-2 bd-sidebar">
+      <div id="nav" class="col-12 col-md-3 col-xl-2b bg-transparent">
         <div class="row">
           <div class="col-md-12 col-8">
             <div class="text-sm-left text-md-center logo">
               FUSiON SMART<span id="beta"> BETA</span>
             </div>
           </div>
-          <div class="col-md-12 col-4 text-right">
+          <div class="col-md-12 col-4 text-right bg-transparent">
             <button
               class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3 collapsed"
               type="button"
@@ -45,7 +45,7 @@
               *ngFor="let item of navigators"
               [id]="item.name"
             >
-              <a href="#">
+              <a [href]="item.path">
                 {{ item.name }}
               </a>
             </li>
@@ -54,29 +54,11 @@
       </div>
 
       <div
-        id="content-body"
-        class="col-12 col-md-9 col-xl-10 pl-4 pr-4 bd-content"
+        class="col-12 col-md-9 col-xl-10 pl-4 pr-4 bd-content bg-transparent"
       >
-        <div class="row">
-          <div class="col-md-12 pt-4 mt-3">
-            <h2>Energy Dashboard</h2>
-          </div>
+        <div class="container main__container">
+            <router-outlet></router-outlet>
         </div>
-
-        <apx-chart
-          [series]="series"
-          [chart]="chart"
-          [dataLabels]="dataLabels"
-          [markers]="markers"
-          [title]="title"
-          [fill]="fill"
-          [stroke]="stroke"
-          [yaxis]="yaxis"
-          [xaxis]="xaxis"
-          [tooltip]="tooltip"
-          [autoUpdateSeries]="true"
-        >
-        </apx-chart>
       </div>
     </div>
   </div>
