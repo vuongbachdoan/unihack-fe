@@ -55,7 +55,7 @@ export class CostComponent {
     this.plotOptions = {
       bar: {
         horizontal: false,
-        columnWidth: "30%",
+        columnWidth: "40%",
       }
     },
     this.dataLabels = {

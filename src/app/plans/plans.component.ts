@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import {
-  AngularFireDatabase,
-  AngularFireList,
-} from '@angular/fire/compat/database';
 import * as mock from '../mock/tenDayRecorded';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
+import { Observable, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-plans',
@@ -15,7 +13,7 @@ export class PlansComponent {
   result:any[] = [];
   isFetch: boolean = true;
 
-  constructor(db: AngularFireDatabase) {
+  constructor(private db: AngularFireDatabase) {
     this.dataListFetch = mock.oneDayRecordedMock;
 
     const maxW = 2000;
@@ -41,8 +39,24 @@ export class PlansComponent {
 
     this.result = result
 
-    this.render();
-  }
 
-  public render() {}
+
+  }
+  observable$!: Observable<any>;
+  unsubscribe$: Subject<void> = new Subject<void>();
+
+
+  ngOnInit() {
+    this.observable$ = this.db.list('DeviceList').valueChanges()
+    this.observable$
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(value => {
+        this.dataListFetch = value
+        console.log(this.dataListFetch)
+      });
+  }
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
 }
