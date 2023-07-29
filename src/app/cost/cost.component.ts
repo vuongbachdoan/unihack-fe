@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component, ViewChild } from '@angular/core';
 import {
   ApexAxisChartSeries,
@@ -38,8 +39,9 @@ export class CostComponent {
     this.series = [
       {
         name: "Total billing",
-        data: [350000, 410000, 360000, 260000, 450000, 480000, 520000, 530000, 410000]
-      }
+        data: [350000, 410000, 360000, 260000, 450000, 480000, 520000, 530000, 410000],
+        color: '#D1F248',
+      },   
     ]
 
     this.chart = {
