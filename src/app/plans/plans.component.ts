@@ -11,9 +11,9 @@ import { generateSuggestion } from '../utils/utils';
 })
 export class PlansComponent {
   dataListFetch;
-  result:any[] = [];
+  result: any[] = [];
   isFetch: boolean = true;
-  
+
 
   constructor(private db: AngularFireDatabase) {
     this.dataListFetch = mock.oneDayRecordedMock;
@@ -30,10 +30,10 @@ export class PlansComponent {
       ) / 2;
 
       let temp = {
-        name:value.nameDevice,
+        name: value.nameDevice,
         id: value.id,
         result: result1,
-        message: result1 > (maxW - 100) ?  'The electricity you are consuming can be large, do you want to be optimal?':'Everything is OK!',
+        message: result1 > (maxW - 100) ? 'The electricity you are consuming can be large, do you want to be optimal?' : 'Everything is OK!',
         duration: generateSuggestion(value.history)
       }
 
@@ -58,5 +58,17 @@ export class PlansComponent {
   ngOnDestroy() {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+  }
+
+  toastTrigger: boolean = false;
+  handleSetTime() {
+    this.toastTrigger = true;
+
+    setTimeout(() => {
+      this.toastTrigger = false;
+    }, 3000)
+  }
+  closeToast() {
+    this.toastTrigger = false;
   }
 }

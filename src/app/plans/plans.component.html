@@ -21,9 +21,8 @@
               ({{ item.result }}kwh/2000kwh)
             </p>
             <button
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
               class="btn btn-primary"
+              (click)="handleSetTime()"
             >
               Accept optimization
             </button>
@@ -32,5 +31,16 @@
         <div class="card-footer text-white fs-bold">{{item.duration.startAt}} - {{item.duration.endAt}}</div>
       </div>
     </div>
+  </div>
+</div>
+
+<div *ngIf="toastTrigger" class="toast d-block position-absolute top-0 end-0 m-3"role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header" style="background-color: #000; ">
+    <strong class="me-auto title-highlight">Notification</strong>
+    <small>Setting time successfull!</small>
+    <button type="button" style="color: #D1F248" class="btn-close" (click)="closeToast()">X</button>
+  </div>
+  <div class="toast-body">
+    Hello, world! This is a toast message.
   </div>
 </div>

@@ -22,9 +22,13 @@ export class DevicesComponent {
   }
 
   addReport() {
-    this.report.update({ offTime: this.dateTime })
-    .then(() => {
-      console.log("Update successfully")
-    });
+    const date = new Date(this.dateTime);
+    const formattedDate = `${date.getMinutes()}:${date.getHours()} - ${date.getDate()}:${date.getMonth() + 1}:${date.getFullYear()}`;
+
+    this.report.update({ offTime: formattedDate })
+      .then(() => {
+        console.log("Update successfully")
+        this.dateTime = formattedDate
+      });
   }
 }
