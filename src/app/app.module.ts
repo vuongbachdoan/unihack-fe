@@ -15,6 +15,7 @@ import * as FusionCharts from 'fusioncharts';
 import * as Charts from 'fusioncharts/fusioncharts.charts';
 // Load themes
 import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import { CostComponent } from './cost/cost.component';
 
 // Add dependencies to FusionChartsModule
 FusionChartsModule.fcRoot(

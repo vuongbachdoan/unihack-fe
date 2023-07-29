@@ -1,0 +1,37 @@
+<p>Select devices</p>
+
+<div class="row">
+  <input type="radio" name="deviceSelected" id="device1">
+  <input type="radio" name="deviceSelected" id="device2">
+
+  <div class="col-md-3">
+    Device 1
+    <label for="device1">
+      <img
+        class="img-fluid rounded"
+        src="../../assets/images/air_conditioner.png"
+        alt="air conditioner"
+      />
+    </label>
+  </div>
+  <div class="col-md-3">
+    Device 2
+    <label for="device2">
+      <img
+        class="img-fluid rounded"
+        src="../../assets/images/air_conditioner.png"
+        alt="air conditioner"
+      />
+    </label>
+  </div>
+</div>
+
+<div class="progress-circle">
+  <span class="progress-value" (click)="toggleState()">{{
+    isOff ? "Start" : "Stop"
+  }}</span>
+  <svg>
+    <circle class="progress-back" cx="50%" cy="50%" r="40"></circle>
+    <circle class="progress-front" cx="50%" cy="50%" r="40"></circle>
+  </svg>
+</div>
