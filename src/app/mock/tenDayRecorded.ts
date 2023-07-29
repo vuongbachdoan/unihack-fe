@@ -1696,11 +1696,11 @@ export const oneDayRecordedMock = [
       },
       {
         dateTime: '2023-07-29 05:30',
-        value: '100',
+        value: '1200',
       },
       {
         dateTime: '2023-07-29 06:00',
-        value: '106',
+        value: '126',
       },
       {
         dateTime: '2023-07-29 06:30',
@@ -1708,7 +1708,7 @@ export const oneDayRecordedMock = [
       },
       {
         dateTime: '2023-07-29 07:00',
-        value: '100',
+        value: '120',
       },
       {
         dateTime: '2023-07-29 07:30',
@@ -1720,31 +1720,31 @@ export const oneDayRecordedMock = [
       },
       {
         dateTime: '2023-07-29 08:30',
-        value: '221',
+        value: '0',
       },
       {
         dateTime: '2023-07-29 09:00',
-        value: '120',
+        value: '0',
       },
       {
         dateTime: '2023-07-29 09:30',
-        value: '311',
+        value: '0',
       },
       {
         dateTime: '2023-07-29 10:00',
-        value: '511',
+        value: '0',
       },
       {
         dateTime: '2023-07-29 10:30',
-        value: '751',
+        value: '0',
       },
       {
         dateTime: '2023-07-29 11:00',
-        value: '104',
+        value: '0',
       },
       {
         dateTime: '2023-07-29 11:30',
-        value: '172000',
+        value: '0',
       },
       {
         dateTime: '2023-07-29 12:00',
@@ -1784,43 +1784,43 @@ export const oneDayRecordedMock = [
       },
       {
         dateTime: '2023-07-29 16:30',
-        value: '0',
+        value: '18',
       },
       {
         dateTime: '2023-07-29 17:00',
-        value: '0',
+        value: '18',
       },
       {
         dateTime: '2023-07-29 17:30',
-        value: '0',
+        value: '18',
       },
       {
         dateTime: '2023-07-29 18:00',
-        value: '0',
+        value: '18',
       },
       {
         dateTime: '2023-07-29 18:30',
-        value: '0',
+        value: '18',
       },
       {
         dateTime: '2023-07-29 19:00',
-        value: '0',
+        value: '120',
       },
       {
         dateTime: '2023-07-29 19:30',
-        value: '100',
+        value: '120',
       },
       {
         dateTime: '2023-07-29 20:00',
-        value: '100',
+        value: '120',
       },
       {
         dateTime: '2023-07-29 20:30',
-        value: '105',
+        value: '125',
       },
       {
         dateTime: '2023-07-29 21:00',
-        value: '105',
+        value: '125',
       },
       {
         dateTime: '2023-07-29 21:30',
@@ -1836,11 +1836,11 @@ export const oneDayRecordedMock = [
       },
       {
         dateTime: '2023-07-29 23:00',
-        value: '105',
+        value: '185',
       },
       {
         dateTime: '2023-07-29 23:30',
-        value: '105',
+        value: '185',
       },
     ],
   },
