@@ -22,7 +22,6 @@
     "@ng-bootstrap/ng-bootstrap": "^15.1.0",
     "@ngrx/store": "^16.1.0",
     "@popperjs/core": "^2.11.6",
-    "angular-fusioncharts": "^4.0.3",
     "bootstrap": "^5.2.3",
     "chartjs": "^0.3.24",
     "firebase": "^9.23.0",

@@ -7,7 +7,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeModule } from './home/home.module';
 import { StoreModule } from '@ngrx/store';
 import { navigatorReducer } from './shared/redux/navigator.reducer';
-import { FusionChartsModule } from 'angular-fusioncharts';
 
 // Load FusionCharts
 // Load Charts module
@@ -29,7 +28,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
     NgbModule,
     HomeModule,
     StoreModule.forRoot({navigator: navigatorReducer}, {}),
-    FusionChartsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule
   ],
