@@ -9,16 +9,15 @@
       <div class="morphi card text-center">
         <div class="card-header text-white">Device</div>
         <div class="card-body">
-          <h5 class="card-title title-highlight">Set time to Laptop</h5>
+          <h5 class="card-title title-highlight">Set time to Device 1</h5>
           <p class="card-text text-light fs-6 fw-light">
             Remaining usage time to the device.
           </p>
           <button
-            data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"
             class="btn btn-primary"
+            (click)="toggleStatus()"
           >
-            Edit time
+            Turn off device
           </button>
         </div>
         <div class="card-footer text-white fs-bold">{{dateTime ?? "00:00:00"}}</div>
@@ -28,35 +27,15 @@
       <div class="morphi card text-center">
         <div class="card-header text-white">Device</div>
         <div class="card-body">
-          <h5 class="card-title title-highlight">Set time to Bub-Light</h5>
+          <h5 class="card-title title-highlight">Set time to Device 2</h5>
           <p class="card-text text-light fs-6 fw-light">
             Remaining usage time to the device.
           </p>
           <button
-            data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"
             class="btn btn-primary"
+            (click)="toggleStatus()"
           >
-            Edit time
-          </button>
-        </div>
-        <div class="card-footer text-white fs-bold">00:00:30</div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="morphi card text-center">
-        <div class="card-header text-white">Device</div>
-        <div class="card-body">
-          <h5 class="card-title title-highlight">Set time to Fan</h5>
-          <p class="card-text text-light fs-6 fw-light">
-            Remaining usage time to the device.
-          </p>
-          <button
-            data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"
-            class="btn btn-primary"
-          >
-            Edit time
+            Turn off device
           </button>
         </div>
         <div class="card-footer text-white fs-bold">00:00:30</div>

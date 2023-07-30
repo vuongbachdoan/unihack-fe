@@ -14,9 +14,10 @@ export class PlansComponent {
   result: any[] = [];
   isFetch: boolean = true;
 
-
+  status;
   constructor(private db: AngularFireDatabase) {
     this.dataListFetch = mock.oneDayRecordedMock;
+    this.status = db.object('Device1');
 
     const maxW = 2000;
 
@@ -45,6 +46,8 @@ export class PlansComponent {
   observable$!: Observable<any>;
   unsubscribe$: Subject<void> = new Subject<void>();
 
+  status1: string = "Accept optimization";
+  status2: string = "Accept optimization";
   ngOnInit() {
     this.observable$ = this.db.list('DeviceList').valueChanges()
     this.observable$
@@ -52,6 +55,20 @@ export class PlansComponent {
       .subscribe(value => {
         this.dataListFetch = value
         console.log(this.dataListFetch)
+      });
+
+    this.observable$ = this.db.list('Device1').valueChanges()
+    this.observable$
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(value => {
+        this.status1 = value[4]
+      });
+
+    this.observable$ = this.db.list('Device2').valueChanges()
+    this.observable$
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(value => {
+        this.status2 = value[4]
       });
   }
   ngOnDestroy() {
@@ -61,7 +78,12 @@ export class PlansComponent {
 
   toastTrigger: boolean = false;
   handleSetTime() {
+
     this.toastTrigger = true;
+    this.status.update({ status: 'Pending' })
+      .then(() => {
+        console.log("Accept successfully")
+      });
 
     setTimeout(() => {
       this.toastTrigger = false;

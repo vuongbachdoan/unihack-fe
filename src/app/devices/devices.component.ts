@@ -33,4 +33,11 @@ export class DevicesComponent {
         this.dateTime = formattedDate
       });
   }
+
+  toggleStatus() {
+    this.status.update({ isOff: true })
+      .then(() => {
+        console.log("Update successfully")
+      });
+  }
 }
